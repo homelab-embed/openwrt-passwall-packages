@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=tuic-client
-PKG_VERSION:=1.8.1
+PKG_VERSION:=1.8.9
 PKG_RELEASE:=1
 
 PKG_LICENSE_FILES:=LICENSE
@@ -15,23 +15,23 @@ include $(INCLUDE_DIR)/package.mk
 
 ifeq ($(ARCH),aarch64)
 	TUIC_ARCH:=tuic-client-aarch64-linux-musl
-	PKG_HASH:=68df41cff74df766f313fbef1f624825e5e8f60b9a40bdb1fb017c232db93bf3
+	PKG_HASH:=684404cf835f2cd44521ef26037cbd6f4ea112bd0b25944ede07d7a59eca299f
 else ifeq ($(ARCH),arm)
 # Referred to golang/golang-values.mk
 	ARM_CPU_FEATURES:=$(word 2,$(subst +,$(space),$(call qstrip,$(CONFIG_CPU_TYPE))))
 	ifeq ($(ARM_CPU_FEATURES),)
 		TUIC_ARCH:=tuic-client-armv7-linux-musl
-		PKG_HASH:=19c9af5c7115f4526268a9d86446ce0ceef2ee80ad5ad6aed84ed59540c6262c
+		PKG_HASH:=df47a55ebf0b2d33b62d62e70f566e8b39622a477752bf850ca59ac2507c1394
 	else
 		TUIC_ARCH:=tuic-client-armv7-linux-muslhf
-		PKG_HASH:=7a1410197ab5804c9f1ddd1a3ff7f4765e51f30d626ae99e04509ebf69b3979c
+		PKG_HASH:=79ceade97699a39f0480caadfba44952d41f6f52196d702297c50155f4ae5ed7
 	endif
 else ifeq ($(ARCH),i386)
 	TUIC_ARCH:=tuic-client-i686-linux-musl
-	PKG_HASH:=fd0992d8a799cf897057d2c5fc3354a7f0f366cc35b3f7508736e81758289883
+	PKG_HASH:=b84104baf1f5f19eed415c35cd83de56edd0a6237c7abe4d24cc8d008f934ea5
 else ifeq ($(ARCH),x86_64)
 	TUIC_ARCH:=tuic-client-x86_64-linux-musl
-	PKG_HASH:=542d50e33f9b470a564b9a16f4c321c7c955af81703e2e05bee4fc2869cebffe
+	PKG_HASH:=a796587e847ed023e3bd7345ce148477a870e3cd0f2653452cf97fa7d7ba871e
 # Set the default value to make OpenWrt Package Checker happy
 else
   PKG_SOURCE:=dummy
