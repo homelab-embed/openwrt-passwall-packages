@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=tuic-client
-PKG_VERSION:=1.8.1
+PKG_VERSION:=4
 PKG_RELEASE:=1
 
 PKG_LICENSE_FILES:=LICENSE
